@@ -16,6 +16,10 @@ export class HttpService {
     return this._http.get(this._apiUrl + route);
   }
 
+  public post(route: String, data: any) {
+    return this._http.post(this._apiUrl + route, data);
+  }
+
   public delete(id: String) {
     return this._http.delete(this._apiUrl + '/product/' + id);
   }

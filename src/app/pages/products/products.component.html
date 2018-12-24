@@ -1,3 +1,23 @@
-<div *ngFor="let product of products" (click)='deleteProduct(product.id)'>
-  {{product.name}}
+<div class="container mt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Category</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; index as i" (click)='deleteProduct(product.id)'>
+        <th scope=" row">1</th>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.category.name}}</td>
+        <td (click)="deleteProduct(product.id, i)">Delete</td>
+      </tr>
+
+    </tbody>
+  </table>
 </div>

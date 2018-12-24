@@ -18,9 +18,9 @@ export class ProductsComponent implements OnInit {
   }
 
 
-  public deleteProduct(id) {
+  public deleteProduct(id, index) {
     this._api.delete(id).subscribe((data) => {
-      console.log('data', data);
+      this.products.splice(index);
     });
   }
 }
