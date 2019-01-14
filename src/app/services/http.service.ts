@@ -20,7 +20,7 @@ export class HttpService {
     return this._http.post(this._apiUrl + route, data);
   }
 
-  public delete(id: String) {
-    return this._http.delete(this._apiUrl + '/product/' + id);
+  public delete(route: String, id: String) {
+    return this._http.delete(this._apiUrl + route + '/' + id);
   }
 }
